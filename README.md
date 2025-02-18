@@ -106,6 +106,17 @@ Remote：远程仓库
 14将别的分支修改转移到自己的分支：git cherry-pick
     远程仓库已经更新时，本地仓库还没修改，该命令将master改动代码合并到我们分支上，不会修改我们的代码。
 
+15 pull、fetch、merge
+    git clone 用于从远程仓库完整复制一个项目到本地,创建一个新的 Git 本地仓库。  
+    git pull 用于从远程仓库更新本地仓库的内容。本地仓库已经存在，且需要获取远程仓库的最新更改。  
+    git pull origin main  
+    git pull 实际上是两个操作的组合：  
+        git fetch：从远程仓库下载最新的提交和分支信息，但不会修改本地文件。  
+        git merge：将下载的更改合并到当前分支。  
+![pull][/pull.png]
+
+    
+
 #  github：代码托管、版本控制、协作开发的社区。
 代码上传到 GitHub 后，会保存在 GitHub 的服务器上，不占用本地存储空间。  
 ##基本使用
