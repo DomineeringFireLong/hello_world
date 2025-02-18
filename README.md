@@ -87,6 +87,7 @@ Remote：远程仓库
     查看当前所有分支:git branch -a   
     git删除本地分支:git branch -D 分支名  
     git删除远程分支:git push origin --delete 远程分支名
+    git修改分支名称：git branch -m 分支名 新的分支名 
     分支作用
     1.并行开发：在软件开发过程中，多个不同的开发任务同时进行的情况。通过创建不同的分支，不同的开发者或者同一开发者可以在不同分支上独立地进行开发工作，而不会相互影。  
     2.版本管理：分支允许你在项目的不同状态之间进行切换和管理。每个分支都可以有自己独立的提交历史，代表着项目在某个特定方向上的发展。 
@@ -96,8 +97,14 @@ Remote：远程仓库
 12.git合并分支: git merge
     新建分支并做完工作之后，想要把分支提交至master，只需要切换到master仓库，并执行git merge 分支名就可以了  
     git checkout main  # 切换到主分支  
-    git merge feature/new-feature  # 将 feature/new-feature 分支合并到当前分支  
+    git merge feature/new-feature  # 将 feature/new-feature 分支合并到当前分支   
     
+13.git保存当前工作切换分支：git stash  
+    当前工作区修改了文件或者其它功能时，不能切换或者创建到其它分区   
+    git stash list查看当前存储了多少工作状态   
+    切换上个分支 git stash pop
+14将别的分支修改转移到自己的分支：git cherry-pick
+    远程仓库已经更新时，本地仓库还没修改，该命令将master改动代码合并到我们分支上，不会修改我们的代码。
 
 #  github：代码托管、版本控制、协作开发的社区。
 代码上传到 GitHub 后，会保存在 GitHub 的服务器上，不占用本地存储空间。  
@@ -105,20 +112,32 @@ Remote：远程仓库
 1.创建一个ssh的key，因为github是用ssh服务进行通讯的。
 ssh-keygen -t rsa -C "your_email@example.com"
 2.关联本地和远程仓库
-git remote add origin git@github.com:beiszhihao/test.git
+git remote add origin git@github.com:DomineeringFireLong/hello_world.git
+git push -u origin master
+
+
+## 远程仓库->本地仓库    
+新建空目录，不需要git init
+git clone "http:..."#会自动初始化,默认main分支
+git clone -b分支名 仓库地址来指定分支
+
+
+
 ## 本地仓库->远程仓库    
 git init
 git add README.md
 git commit -m "首次提交代码"
-git remote add origin https://github.com/DomineeringFireLong/hello_world.git  
-git push -u origin master   
+git remote add origin git@github.com:DomineeringFireLong/hello_world.git 
+git push origin master   
 查看origin 远程仓库的 URL  
 git remote get-url origin  
+查看远程仓库信息
+git remote show origin  
 查看所有远程仓库的详细信息  
 git remote -v  
 # 删除现有的 origin 远程仓库   
 git remote remove origin  
 # 重新添加 origin 远程仓库   
-git remote add origin https://github.com/DomineeringFireLong/hello_world.git  
+git remote add origin git@github.com:DomineeringFireLong/hello_world.git
 #覆盖现有远程仓库   
-git remote set-url origin https://github.com/DomineeringFireLong/hello_world.git  
+git remote set-url origin git@github.com:DomineeringFireLong/hello_world.git
