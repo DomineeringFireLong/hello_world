@@ -10,9 +10,11 @@
 
 ## 常用命令：
 1.配置git环境：  
+    创建项目的SSH Key
     git config --global user.name "你的用户名"    
     git config --global user.email "你的邮箱"      
     ssh-keygen -t rsa -C "你的邮箱"  
+    ssh（Secure Shell）是一个远程登录服务器或设备的加密网络协议
 2.创建本地空仓库  
     git init    
     master  
