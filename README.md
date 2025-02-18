@@ -6,7 +6,21 @@
 ##  git原理  
 本地仓库文件到远程仓库的流程：工作区----> 暂存区 ----> 仓库区 ----> 远程仓库   
 ![git原理](/git原理.png)  
-
+    git init
+    git add README.md
+    git commit -m "首次提交代码"
+    git remote add origin https://github.com/DomineeringFireLong/hello_world.git  
+    git push -u origin master   
+    查看origin 远程仓库的 URL  
+    git remote get-url origin  
+    查看所有远程仓库的详细信息  
+    git remote -v  
+    # 删除现有的 origin 远程仓库   
+    git remote remove origin  
+    # 重新添加 origin 远程仓库   
+    git remote add origin https://github.com/DomineeringFireLong/hello_world.git  
+    #覆盖现有远程仓库   
+    git remote set-url origin https://github.com/DomineeringFireLong/hello_world.git  
 
 ##  github：代码托管、版本控制、协作开发的社区。
 代码上传到 GitHub 后，会保存在 GitHub 的服务器上，不占用本地存储空间。  
