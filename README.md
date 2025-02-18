@@ -1,29 +1,21 @@
-# 学习git和github使用
+# 学习git使用
 ## git简介：版本控制的分布式系统。  
 集中式：代码放在一个服务器上集中管理，所有操作都需要服务器的支持。  
 分布式：从从主仓库拉取一份代码下来后，自己的电脑就是服务器，每个人的客户端（电脑）都是服务器，提交到主仓库时，合并推送到主仓库就可以了。  
     没有一个主版本号的，它们都是用id(哈希算法算出)来做标志的,用master作为主仓库，其它的分支怎么迭代都不会影响到master  
 ##  git原理  
 本地仓库文件到远程仓库的流程：工作区----> 暂存区 ----> 仓库区 ----> 远程仓库   
-![git原理](/git原理.png)  
-    git init
-    git add README.md
-    git commit -m "首次提交代码"
-    git remote add origin https://github.com/DomineeringFireLong/hello_world.git  
-    git push -u origin master   
-    查看origin 远程仓库的 URL  
-    git remote get-url origin  
-    查看所有远程仓库的详细信息  
-    git remote -v  
-    # 删除现有的 origin 远程仓库   
-    git remote remove origin  
-    # 重新添加 origin 远程仓库   
-    git remote add origin https://github.com/DomineeringFireLong/hello_world.git  
-    #覆盖现有远程仓库   
-    git remote set-url origin https://github.com/DomineeringFireLong/hello_world.git  
+![git原理](/git原理.png)    
 
-##  github：代码托管、版本控制、协作开发的社区。
-代码上传到 GitHub 后，会保存在 GitHub 的服务器上，不占用本地存储空间。  
+## git基本组成框架
+Workspace：开发者工作区,当前写代码的目录，它一般保持的是最新仓库代码。  
+Index：暂存区,位于.git目录中，它用来存放临时动作.  
+    选择性提交文件或更改。  
+    分阶段构建提交。  
+    提供预览和检查更改的机会。  
+    确保提交的内容是明确和可控的。  
+Repository：仓库区（或本地仓库）    
+Remote：远程仓库  
 
 ## 常用命令：
 1.配置git环境：  
@@ -41,10 +33,18 @@
         提交到本地仓库:git commit -m "描述信息"  
     head->master 代表这次提交到master主仓库  
         重写上一次的提交信息:git commit --amend  
+    实在不确信哪些文件是改动过的，你只需要使用
+        git add --all  
+    
 4.查看历史提交日志  
-git log  
-git log --pretty=oneline  
+    git log  
     简洁输出  
+    git log --pretty=oneline   
+    查看单个文件可回滚版本：git log filename  
+    git reset命令将其回滚就可用  
+    查看提交历史  
+    git reflog 
+
 5.回滚代码仓库  
     git reset --hard 重置代码仓库版本id     
         有三种模式  
@@ -63,14 +63,62 @@ git log --pretty=oneline
     AM：修改  
     Untracked：未提交  
     modified：新文件，但未提交  
-7.工作区与缓存区  
-    工作区：工作区就是你当前的工作目录  
+7.工作区与缓存区   
+    工作区：工作区就是你当前的工作目录   
     缓存区：这里存放了你使用git add命令提交的文件描述信息，它位于.git目录下的index文件中  
+8. 文件撤销回到最近一次修改的状态，vim修改后，想撤销  
+    git checkout -- file  
+    这个功能本质是切换，不能一直迭代恢复。  
+    checkout：切换参数，通常用来切换分支仓库   
+9.删除文件：git rm  
+    git rm删除文件，但是也需要使用git commit提交一次    
+    git rm会先将文件放入缓存区,且没有使用commit提交的情况下,git rm后恢复文件：git rm、git reset、git checkout  
+    使用git reset重置所有缓存区操作   
+    重置完成之后在使用git checkout命令将文件取消操作  
 
+10.git创建分支：git branch、git checkout  
+    创建分支并切换过去
+    git checkout -b dev
+    等价于
+    git branch dev
+    git checkout dev
+    查看当前属于哪个分支，也就是查看HEAD的指向
+    git branch   
+    查看当前所有分支:git branch -a   
+    git删除本地分支:git branch -D 分支名  
+    git删除远程分支:git push origin --delete 远程分支名
+    分支作用
+    1.并行开发：在软件开发过程中，多个不同的开发任务同时进行的情况。通过创建不同的分支，不同的开发者或者同一开发者可以在不同分支上独立地进行开发工作，而不会相互影。  
+    2.版本管理：分支允许你在项目的不同状态之间进行切换和管理。每个分支都可以有自己独立的提交历史，代表着项目在某个特定方向上的发展。 
+ 
+    
+11.git切换分支: git checkout  
+12.git合并分支: git merge
+    新建分支并做完工作之后，想要把分支提交至master，只需要切换到master仓库，并执行git merge 分支名就可以了  
+    git checkout main  # 切换到主分支  
+    git merge feature/new-feature  # 将 feature/new-feature 分支合并到当前分支  
+    
 
-branch分支
-  1.并行开发：在软件开发过程中，多个不同的开发任务同时进行的情况。通过创建不同的分支，不同的开发者或者同一开发者可以在不同分支上独立地进行开发工作，而不会相互影。  
-  2.版本管理：分支允许你在项目的不同状态之间进行切换和管理。每个分支都可以有自己独立的提交历史，代表着项目在某个特定方向上的发展。  
-
-blame 
-每一行代码的最后修改信息
+#  github：代码托管、版本控制、协作开发的社区。
+代码上传到 GitHub 后，会保存在 GitHub 的服务器上，不占用本地存储空间。  
+##基本使用
+1.创建一个ssh的key，因为github是用ssh服务进行通讯的。
+ssh-keygen -t rsa -C "your_email@example.com"
+2.关联本地和远程仓库
+git remote add origin git@github.com:beiszhihao/test.git
+## 本地仓库->远程仓库    
+git init
+git add README.md
+git commit -m "首次提交代码"
+git remote add origin https://github.com/DomineeringFireLong/hello_world.git  
+git push -u origin master   
+查看origin 远程仓库的 URL  
+git remote get-url origin  
+查看所有远程仓库的详细信息  
+git remote -v  
+# 删除现有的 origin 远程仓库   
+git remote remove origin  
+# 重新添加 origin 远程仓库   
+git remote add origin https://github.com/DomineeringFireLong/hello_world.git  
+#覆盖现有远程仓库   
+git remote set-url origin https://github.com/DomineeringFireLong/hello_world.git  
