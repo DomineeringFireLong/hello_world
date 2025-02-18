@@ -113,7 +113,7 @@ Remote：远程仓库
     git pull 实际上是两个操作的组合：  
         git fetch：从远程仓库下载最新的提交和分支信息，但不会修改本地文件。  
         git merge：将下载的更改合并到当前分支。  
-![pull][/pull.png]
+![pull](/pull.png)
 
     
 
