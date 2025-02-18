@@ -1,4 +1,4 @@
-![c3bb1943e33359a6728fa646f5417bab](https://github.com/user-attachments/assets/b7e21d07-af86-4564-9582-9781690c9be6)# 学习git和github使用
+# 学习git和github使用
 ## git简介：版本控制的分布式系统。  
 集中式：代码放在一个服务器上集中管理，所有操作都需要服务器的支持。  
 分布式：从从主仓库拉取一份代码下来后，自己的电脑就是服务器，每个人的客户端（电脑）都是服务器，提交到主仓库时，合并推送到主仓库就可以了。  
@@ -11,7 +11,8 @@
 ## 常用命令：
 1.配置git环境：  
     git config --global user.name "你的用户名"    
-    git config --global user.email "你的邮箱"  
+    git config --global user.email "你的邮箱"      
+    ssh-keygen -t rsa -C "你的邮箱"  
 2.创建本地空仓库  
     git init    
     master  
