@@ -23,7 +23,8 @@ Remote：远程仓库
     git config --global user.name "你的用户名"    
     git config --global user.email "你的邮箱"      
     ssh-keygen -t rsa -C "你的邮箱"  
-    ssh（Secure Shell）是一个远程登录服务器或设备的加密网络协议
+    ssh（Secure Shell）是一个远程登录服务器或设备的加密网络协议  
+    
 2.创建本地空仓库  
     git init    
     master  
@@ -56,6 +57,7 @@ Remote：远程仓库
         回滚当前仓库指向的上一个版本,^代表上一个版本的意思  
     git reset --hard HEAD~3  
         代表以当前版本为基数，回滚多少次。  
+        
 6.查看提交之后文件是否做了改动  
     git status  
     查看当前仓库状态  
@@ -63,13 +65,16 @@ Remote：远程仓库
     AM：修改  
     Untracked：未提交  
     modified：新文件，但未提交  
+    
 7.工作区与缓存区   
     工作区：工作区就是你当前的工作目录   
     缓存区：这里存放了你使用git add命令提交的文件描述信息，它位于.git目录下的index文件中  
+    
 8. 文件撤销回到最近一次修改的状态，vim修改后，想撤销  
     git checkout -- file  
     这个功能本质是切换，不能一直迭代恢复。  
     checkout：切换参数，通常用来切换分支仓库   
+    
 9.删除文件：git rm  
     git rm删除文件，但是也需要使用git commit提交一次    
     git rm会先将文件放入缓存区,且没有使用commit提交的情况下,git rm后恢复文件：git rm、git reset、git checkout  
@@ -93,7 +98,8 @@ Remote：远程仓库
     2.版本管理：分支允许你在项目的不同状态之间进行切换和管理。每个分支都可以有自己独立的提交历史，代表着项目在某个特定方向上的发展。 
  
     
-11.git切换分支: git checkout  
+11.git切换分支: git checkout   
+
 12.git合并分支: git merge
     新建分支并做完工作之后，想要把分支提交至master，只需要切换到master仓库，并执行git merge 分支名就可以了  
     git checkout main  # 切换到主分支  
@@ -135,11 +141,11 @@ git clone -b分支名 仓库地址来指定分支
 
 
 ## 本地仓库->远程仓库    
-git init
-git add README.md
-git commit -m "首次提交代码"
-git remote add origin git@github.com:DomineeringFireLong/hello_world.git 
-git push origin master   
+git init  
+git add README.md  
+git commit -m "首次提交代码"    
+git remote add origin git@github.com:DomineeringFireLong/hello_world.git     
+git push origin master     
 查看origin 远程仓库的 URL  
 git remote get-url origin  
 查看远程仓库信息
