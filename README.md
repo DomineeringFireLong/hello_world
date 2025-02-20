@@ -5,13 +5,16 @@
     没有一个主版本号的，它们都是用id(哈希算法算出)来做标志的,用master作为主仓库，其它的分支怎么迭代都不会影响到master  
 ##  git原理  
 本地仓库文件到远程仓库的流程：工作区----> 暂存区 ----> 仓库区 ----> 远程仓库      
-没有add和commit时，所有的操作都在工作区，没有进入暂存区，更没有进入仓库区.  
-一旦add之后，进入暂存区；一旦commit进入了仓库区。   
-
-没有add、没有commit时,用git checkout filename 可以从暂存区恢复文件到工作区.  
-有add、没有commit时,用git log 找到commit的最新的id号，git checkout id号 filename 可以从本地仓库的历史信息恢复文件到工作区.
-有add没有commit时,用git log 找到commit的期望恢复的版本id号，git checkout id号 filename 可以从本地仓库的历史信息恢复文件到工作区.
 ![git原理](/git原理.png)    
+
+没有add和commit时，所有的操作都在工作区，没有进入暂存区，更没有进入仓库区.  
+一旦add之后，进入暂存区；一旦commit进入了仓库区。     
+
+没有add、没有commit时,用git checkout filename 可以从暂存区恢复文件到工作区.   
+有add、没有commit时,用git log 找到commit的最新的id号，git checkout id号 filename 可以从本地仓库的历史信息恢复文件到工作区.  
+有add没有commit时,用git log 找到commit的期望恢复的版本id号，git checkout id号 filename 可以从本地仓库的历史信息恢复文件到工作区.  
+
+![恢复原理](/恢复原理.png)    
 
 ## git基本组成框架
 Workspace：开发者工作区,当前写代码的目录，它一般保持的是最新仓库代码。  
