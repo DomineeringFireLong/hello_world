@@ -130,7 +130,7 @@ Remote：远程仓库
 ssh-keygen -t rsa -C "your_email@example.com"
 2.关联本地和远程仓库
 git remote add origin git@github.com:DomineeringFireLong/hello_world.git
-git push -u origin master
+git push -u origin main
 
 
 ## 远程仓库->本地仓库    
