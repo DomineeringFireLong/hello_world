@@ -14,7 +14,8 @@
 有add、没有commit时,用git log 找到commit的最新的id号，git checkout id号 filename 可以从本地仓库的历史信息恢复文件到工作区.  
 有add没有commit时,用git log 找到commit的期望恢复的版本id号，git checkout id号 filename 可以从本地仓库的历史信息恢复文件到工作区.  
 
-![恢复原理](/恢复原理.png)    
+![恢复原理](/恢复原理.png)     
+
 
 ## git基本组成框架
 Workspace：开发者工作区,当前写代码的目录，它一般保持的是最新仓库代码。  
