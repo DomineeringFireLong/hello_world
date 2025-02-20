@@ -144,7 +144,9 @@ git clone -b分支名 仓库地址来指定分支
 git init  
 git add README.md  
 git commit -m "首次提交代码"     
-[//]:git remote add origin 远程仓库URL  
+
+[//]:gitremoteaddorigin远程仓库URL  
+
 git remote add origin git@github.com:DomineeringFireLong/hello_world.git      
 git push -u origin main       
 查看origin 远程仓库的 URL   
