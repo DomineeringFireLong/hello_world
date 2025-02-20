@@ -117,8 +117,8 @@ Remote：远程仓库
     git pull 用于从远程仓库更新本地仓库的内容。本地仓库已经存在，且需要获取远程仓库的最新更改。  
     git pull origin main  
     git pull 实际上是两个操作的组合：  
-        git fetch：从远程仓库下载最新的提交和分支信息，但不会修改本地文件。  
-        git merge：将下载的更改合并到当前分支。  
+    git fetch：从远程仓库下载最新的提交和分支信息，但不会修改本地文件。  
+    git merge：将下载的更改合并到当前分支。  
 ![pull](/pull.jpg)  
 
     
@@ -143,18 +143,19 @@ git clone -b分支名 仓库地址来指定分支
 ## 本地仓库->远程仓库    
 git init  
 git add README.md  
-git commit -m "首次提交代码"    
-git remote add origin git@github.com:DomineeringFireLong/hello_world.git     
-git push origin master     
-查看origin 远程仓库的 URL  
-git remote get-url origin  
-查看远程仓库信息
-git remote show origin  
-查看所有远程仓库的详细信息  
+git commit -m "首次提交代码"     
+[//]:git remote add origin 远程仓库URL  
+git remote add origin git@github.com:DomineeringFireLong/hello_world.git      
+git push -u origin main       
+查看origin 远程仓库的 URL   
+git remote get-url origin    
+查看远程仓库信息  
+git remote show origin   
+查看所有远程仓库的详细信息    
 git remote -v  
-# 删除现有的 origin 远程仓库   
-git remote remove origin  
-# 重新添加 origin 远程仓库   
-git remote add origin git@github.com:DomineeringFireLong/hello_world.git
-#覆盖现有远程仓库   
-git remote set-url origin git@github.com:DomineeringFireLong/hello_world.git
+# 删除现有的 origin 远程仓库    
+git remote remove origin   
+# 重新添加 origin 远程仓库      
+git remote add origin git@github.com:DomineeringFireLong/hello_world.git  
+#覆盖现有远程仓库     
+git remote set-url origin git@github.com:DomineeringFireLong/hello_world.git   
