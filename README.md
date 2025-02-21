@@ -43,18 +43,20 @@ Remote：远程仓库
     将文件添加到缓存区: git add   
         提交到本地仓库:git commit -m "描述信息"  
     head->master 代表这次提交到master主仓库  
-        重写上一次的提交信息:git commit --amend  
+        重写上一次的提交信息、提交修正:git commit --amend  -m ""
+        如果不加amend，会增加一个提交的日志。
     实在不确信哪些文件是改动过的，你只需要使用
         git add --all  
     
 4.查看历史提交日志  
     git log  
     简洁输出  
-    git log --pretty=oneline   
+    git log --oneline   
     查看单个文件可回滚版本：git log filename  
     git reset命令将其回滚就可用  
     查看提交历史  
-    git reflog 
+    git reflog
+    按q退出
 
 5.回滚代码仓库  
     git reset --hard 重置代码仓库版本id     
@@ -216,6 +218,7 @@ git diff 文件
 
 只有一方修改时，通过pull和push可以完成对齐。
 git pull origin main
+注意push前，把修改的文件提交到本地仓库，否则工作区的修改到不了远程仓库。
 git push origin main
 
 
@@ -228,3 +231,6 @@ git merge origin main
 git就会自动显示冲突的部分，来让我们手动改正。
 改正后：git push origin main
 
+
+修改不同的文件就不会出现问题，会自动合并最新版本的内容。
+p
