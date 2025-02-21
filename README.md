@@ -159,8 +159,15 @@ git push -u origin main
 git clone "http:..."#会自动初始化,默认main分支
 git clone -b分支名 仓库地址来指定分支
 
-关联gitee远程仓库
-git remote add gitee https://gitee.com/zhang-zhuojiang/remote-warehouse-test.git  
+关联gitee远程仓库  
+git remote add gitee git@gitee.com:zhang-zhuojiang/remote-warehouse-test.git  
+
+上述是ssh连接方式，不要用http  
+http和ssh本质上都可以推拉代码
+https://gitee.com/zhang-zhuojiang/remote-warehouse-test.git   
+  
+测试远程连接：  
+ssh -T git@gitee.com  
 
 上传远程仓库
 git push gitee main/dev
@@ -169,7 +176,7 @@ git remote -h
 
 看看关联的远程仓库数量  
 git remote -v
-
+git remote show
 
 [//]:gitremoteaddorigin远程仓库URL  
 
@@ -182,7 +189,7 @@ git remote show origin
 查看所有远程仓库的详细信息    
 git remote -v  
 删除现有的 origin 远程仓库    
-git remote remove origin   
+git remote \remove origin   
 重新添加 origin 远程仓库      
 git remote add origin git@github.com:DomineeringFireLong/hello_world.git  
 #覆盖现有远程仓库     
