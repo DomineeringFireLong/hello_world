@@ -134,13 +134,21 @@ Remote：远程仓库
     
 
 #  github：代码托管、版本控制、协作开发的社区。
+github、gitlab、gitee等都是远程仓库平台。  
+本地仓库通过ssh与远程仓库关联。   
 代码上传到 GitHub 后，会保存在 GitHub 的服务器上，不占用本地存储空间。  
+
 ##基本使用
 1.创建一个ssh的key，因为github是用ssh服务进行通讯的。
 ssh-keygen -t rsa -C "your_email@example.com"
 2.关联本地和远程仓库
-git remote add origin git@github.com:DomineeringFireLong/hello_world.git
-git push -u origin main
+创建本地仓库     
+git init   
+git add README.md      
+git commit -m "首次提交代码"       
+git remote add origin git@github.com:DomineeringFireLong/hello_world.git   
+3.上传代码：本地仓库->远程仓库   
+git push -u origin main   
 
 
 ## 远程仓库->本地仓库    
@@ -150,10 +158,7 @@ git clone -b分支名 仓库地址来指定分支
 
 
 
-## 本地仓库->远程仓库    
-git init  
-git add README.md  
-git commit -m "首次提交代码"     
+
 
 [//]:gitremoteaddorigin远程仓库URL  
 
@@ -165,9 +170,15 @@ git remote get-url origin
 git remote show origin   
 查看所有远程仓库的详细信息    
 git remote -v  
-# 删除现有的 origin 远程仓库    
+删除现有的 origin 远程仓库    
 git remote remove origin   
-# 重新添加 origin 远程仓库      
+重新添加 origin 远程仓库      
 git remote add origin git@github.com:DomineeringFireLong/hello_world.git  
 #覆盖现有远程仓库     
 git remote set-url origin git@github.com:DomineeringFireLong/hello_world.git   
+重新命名当前分支
+git branch -M main
+
+
+ 
+
