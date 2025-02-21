@@ -198,5 +198,14 @@ git remote set-url origin git@github.com:DomineeringFireLong/hello_world.git
 git branch -M main
 
 
- 
+## 提交冲突的解决办法
+当远程仓库和本地仓库不一致时，push会产生冲突。
+需要首先pull一下最新版本的库，然后再push。
+
+所以，并行开发时，进行各自有各自的分支，且不要同时修改同一个文件。
+不过，如果多个人改了同一个文件，合并时Git会标记标出冲突的部分，进行手动改正。
+
+冲突原因：不同的人改了公共的文件，导致远端仓库和某些本地仓库的版本不一致。
+只有一方修改时，通过pull和push可以完成对齐。但是如果两边都改了，就需要手动对齐。
+
 
