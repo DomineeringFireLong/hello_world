@@ -131,6 +131,8 @@ Remote：远程仓库
     git merge：将下载的更改合并到当前分支。  
 ![pull](/pull.jpg)  
 
+注意pull是从远程仓库直接到本地仓库和工作区。
+而push是从本地仓库到远程仓库，所以修改的文件要add和commit。
     
 
 #  github：代码托管、版本控制、协作开发的社区。
