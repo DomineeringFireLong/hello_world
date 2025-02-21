@@ -206,6 +206,23 @@ git branch -M main
 不过，如果多个人改了同一个文件，合并时Git会标记标出冲突的部分，进行手动改正。
 
 冲突原因：不同的人改了公共的文件，导致远端仓库和某些本地仓库的版本不一致。
-只有一方修改时，通过pull和push可以完成对齐。但是如果两边都改了，就需要手动对齐。
 
+避免方法：划分好各自修改的文件，尽量不要同时改一个文件。  
+
+看文件前后的变化   
+git diff 文件
+
+只有一方修改时，通过pull和push可以完成对齐。
+git pull origin main
+git push origin main
+
+
+但是如果两边都改了，就需要手动对齐。
+git pull origin main会直接报错
+拆成两步：
+git fetch origin main
+git merge origin main
+
+git就会自动显示冲突的部分，来让我们手动改正。
+改正后：git push origin main
 
