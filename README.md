@@ -141,23 +141,34 @@ github、gitlab、gitee等都是远程仓库平台。
 ##基本使用
 1.创建一个ssh的key，因为github是用ssh服务进行通讯的。
 ssh-keygen -t rsa -C "your_email@example.com"
+
 2.关联本地和远程仓库
 创建本地仓库     
 git init   
 git add README.md      
 git commit -m "首次提交代码"       
-git remote add origin git@github.com:DomineeringFireLong/hello_world.git   
-3.上传代码：本地仓库->远程仓库   
-git push -u origin main   
+git remote add origin git@github.com:DomineeringFireLong/hello_world.git     
+origin是远程库的名称   
 
+3.上传代码：本地仓库->远程仓库   
+git push -u origin dev   
+git push -u origin main   
 
 ## 远程仓库->本地仓库    
 新建空目录，不需要git init
 git clone "http:..."#会自动初始化,默认main分支
 git clone -b分支名 仓库地址来指定分支
 
+关联gitee远程仓库
+git remote add gitee https://gitee.com/zhang-zhuojiang/remote-warehouse-test.git  
 
+上传远程仓库
+git push gitee main/dev
+查阅帮助信息   
+git remote -h
 
+看看关联的远程仓库数量  
+git remote -v
 
 
 [//]:gitremoteaddorigin远程仓库URL  
