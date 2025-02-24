@@ -102,9 +102,10 @@ Remote：远程仓库
     查看当前属于哪个分支，也就是查看HEAD的指向
     git branch   
     查看当前所有分支:git branch -a   
-    git删除本地分支:git branch -D 分支名  
-    git删除远程分支:git push origin --delete 远程分支名
-    git修改分支名称：git branch -m 分支名 新的分支名 
+    git删除本地分支:git branch -D 分支名   
+    git删除远程分支:git push origin --delete 远程分支名  
+  
+    git修改分支名称：git branch -m 分支名 新的分支名   
     分支作用
     1.并行开发：在软件开发过程中，多个不同的开发任务同时进行的情况。通过创建不同的分支，不同的开发者或者同一开发者可以在不同分支上独立地进行开发工作，而不会相互影。  
     2.版本管理：分支允许你在项目的不同状态之间进行切换和管理。每个分支都可以有自己独立的提交历史，代表着项目在某个特定方向上的发展。 
