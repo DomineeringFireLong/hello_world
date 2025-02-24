@@ -139,7 +139,9 @@ Remote：远程仓库
 
 16.标签
 对commit的标记，起了个别名。
-![标签][/tag.png]
+[tag]: /tag.png "tag"
+![标签][tag]
+
 
 
 
