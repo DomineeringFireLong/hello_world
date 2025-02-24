@@ -138,7 +138,8 @@ Remote：远程仓库
 而push是从本地仓库到远程仓库，所以修改的文件要add和commit。  
 
 16.标签
-对commit的标记，起了个别名。
+对commit的标记，起了个别名。  
+
 [tag]: /tag.png "tag"
 ![标签][tag]
 
