@@ -159,7 +159,7 @@ github、gitlab、gitee等都是远程仓库平台。
 ##基本使用
 1.创建一个ssh的key，因为github是用ssh服务进行通讯的。
 ssh-keygen -t rsa -C "your_email@example.com"
-
+~/.ssh/id_rsa 查看ssh密匙
 2.关联本地和远程仓库
 创建本地仓库     
 git init   
