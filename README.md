@@ -140,16 +140,19 @@ Remote：远程仓库
 注意pull是从远程仓库直接到本地仓库和工作区。
 而push是从本地仓库到远程仓库，所以修改的文件要add和commit。  
 
-16.标签
+16. 标签
 对commit的标记，起了个别名。  
 
 [tag]: /tag.png "tag"
 ![标签][tag]
 
-
-
-
-
+17. 删除本地暂存区数据  
+git rm --cached <file>         # 移除单个文件
+git rm --cached -r <dir>      # 递归移除目录
+git rm --cached .             # 移除所有缓存（慎用！）
+git reset HEAD .              # 撤销所有暂存
+git reset HEAD <file>         # 撤销单个文件
+git reset --hard HEAD        # 丢弃所有未提交的更改（包括工作区）
 
 #  github：代码托管、版本控制、协作开发的社区。
 github、gitlab、gitee等都是远程仓库平台。  
